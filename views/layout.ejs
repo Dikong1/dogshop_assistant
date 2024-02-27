@@ -1,0 +1,36 @@
+<!-- views/layouts/mainLayout.ejs -->
+<% pageTitle = "Go" %>
+<% content = "Go" %>
+<% isAdmin = true %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= pageTitle %></title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header class="navbar">
+        <nav class="nav-list">
+            <ul>
+                <li class="nav-item"><a href="/">Home</a></li>
+                <li class="nav-item"><a href="/breeds">Breeds</a></li>
+                <% if (isAdmin) { %>
+                    <li class="nav-item"><a href="/adminDashboard">Admin Dashboard</a></li>
+                <% } %>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <%- body %>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Dog Breed App</p>
+        <p> @all-rights-reserved by Dias Imakanov, SE-2204</p>
+    </footer>
+</body>
+</html>

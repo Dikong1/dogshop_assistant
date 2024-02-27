@@ -1,0 +1,8 @@
+<!-- views/pages/breeds.ejs -->
+
+<h1>All Breeds</h1>
+<ul>
+  <% breeds.forEach(breed => { %>
+    <li><%= breed.name %></li> <!-- Assuming 'name' is the property for the breed name -->
+  <% }); %>
+</ul>
