@@ -7,45 +7,64 @@
 </head>
 <body>
     <h1>Welcome to the Admin Dashboard!</h1>
-    <!-- Add any dashboard components or functionality here -->
-    <div class="dash-element">
-        <h1>Add Dog Breed</h1>
-        <form id="addBreedForm" action="/adminDashboard/addBreed" method="post">
-            <div class="form-group">
-                <label for="name">Breed Name:</label>
-                <input type="text" id="name" name="name" placeholder="Enter breed name" required>
-            </div>
-            <div class="form-group">
-                <label for="description">Description:</label>
-                <textarea id="description" name="description" placeholder="Enter breed description" required></textarea>
-            </div>
-            <div class="form-group">
-                <label for="image">Image URL:</label>
-                <input type="text" id="image" name="image" placeholder="Enter image URL" required>
-            </div>
-            <button type="submit">Add Breed</button>
-        </form>
-    </div>
-    <div class="dash-element">
-        <h1>Edit Breed</h1>
-        <form action="/adminDashboard/editBreed" method="POST">
-            <!-- Input fields for editing breed information -->
-            <input type="hidden" name="_method" value="PUT"> <!-- This is a hidden input field to simulate PUT method -->
-            <div class="form-group">
-                <label for="breedName">Breed Name:</label>
-                <input type="text" id="breedName" name="name" placeholder="Enter Breed Name" required>
-            </div>
-            <div class="form-group">
-                <label for="description">Description:</label>
-                <textarea id="description" name="description" rows="4" required></textarea>
-            </div>
-            <div class="form-group">
-                <label for="imageUrl">Image URL:</label>
-                <input type="text" id="imageUrl" name="imageUrl" placeholder="Enter Image URL" required>
-            </div>
-            <button type="submit">Update Breed</button>
-        </form>
+    <div class="container">
+        
+        <!-- Add any dashboard components or functionality here -->
+        <div class="dash-element">
+            <h1>Add Dog Breed</h1>
+            <form id="addBreedForm" action="/adminDashboard/addBreed" method="post">
+                <div class="form-group">
+                    <label for="name">Breed Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Enter breed name" required>
+                </div>
+                <div class="form-group">
+                    <label for="name">Breed Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Enter breed name on Russian" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description:</label>
+                    <textarea id="description" name="description" placeholder="Enter breed description" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description:</label>
+                    <textarea id="description" name="description" placeholder="Enter breed description on Russian" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="image">Image URL:</label>
+                    <input type="text" id="image" name="image" placeholder="Enter image URL" required>
+                </div>
+                <button type="submit">Add Breed</button>
+            </form>
+        </div>
+        <div class="dash-element">
+            <h1>Edit Breed</h1>
+            <form action="/adminDashboard/editBreed" method="POST">
+                <!-- Input fields for editing breed information -->
+                <input type="hidden" name="_method" value="PUT"> <!-- This is a hidden input field to simulate PUT method -->
+                <div class="form-group">
+                    <label for="breedName">Breed Name to Edit:</label>
+                    <input type="text" id="breedName" name="name" placeholder="Enter Breed Name for editing" required>
+                </div>
+                <div class="form-group">
+                    <label for="breedName">Breed Name on Russian:</label>
+                    <input type="text" id="ru_breedName" name="ru_name" placeholder="Enter Breed Name on Russian" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description:</label>
+                    <textarea id="description" name="description" rows="4" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description on Russian:</label>
+                    <textarea id="ru_description" name="ru_description" rows="4" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="imageUrl">Image URL:</label>
+                    <input type="text" id="imageUrl" name="imageUrl" placeholder="Enter Image URL" required>
+                </div>
+                <button type="submit">Update Breed</button>
+            </form>
 
+        </div>
     </div>
 </body>
 </html>

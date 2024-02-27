@@ -6,7 +6,7 @@ const adminController = {
   // Example function to get all admin users
   getAllAdminFunctionality: async (req, res, next) => {
     try {
-      if(!req.user) {
+      if(!req.isAdmin) {
         res.redirect('back');
         return;
       }
@@ -17,11 +17,14 @@ const adminController = {
   },
   createBreed: async (req, res, next) => {
     try {
-      if(!req.user) {
+      if(!req.isAdmin) {
         res.redirect('back');
         return;
       }
       const {name, description, image} = req.body;
+      if(await Breed.findOne({name: name})) {
+        res.send("Breed already added");
+      }
       const data = {
         name: name,
         descriptions: description,
@@ -40,7 +43,7 @@ const adminController = {
         return;
       }
       const {name, description, image} = req.body;
-      const breed = Breed.findOneAndUpdate({ name: name }, { descriptions: description, imageUrls: [image]});
+      const breed = Breed.findOneAndUpdate({ name: name }, { descriptions: description, $push: {imageUrls: image}});
       if (!breed) {
         return res.status(404).json({ error: 'Breed not found' });
       }

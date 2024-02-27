@@ -1,0 +1,8 @@
+<% if (isLogged) { %>
+    <h1>Hello, <%= loginName %>! This is your profile page. For now nothing new)</h1>
+<% } else { %>
+    <h1>Not logged, <a href="/login">Login Now</a></h1>
+<% } %>
+<form action="/quit" method="post">
+    <button>Log Out</button>
+</form>

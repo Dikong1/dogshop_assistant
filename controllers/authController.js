@@ -18,7 +18,7 @@ const authController = {
         return res.status(401).json({ error: 'Incorrect Password' });
       }
 
-      const token = generateToken({ user: { isAdmin: user.isAdmin } });
+      const token = generateToken({ user: { name: user.name, isAdmin: user.isAdmin } });
       // Set the token as a cookie
       res.cookie('token', token);
 
@@ -56,6 +56,30 @@ const authController = {
     }
 
   },
+  getProfile: async (req, res, next) => {
+    try {
+      const name = req.username;
+
+      res.render("profile", {isLogged: req.cookies.token, loginName: name})
+    } catch (error) {
+      res.send("wrong Details");
+      next(error);
+    }
+
+  },
+  logout: async (req, res, next) => {
+    try {
+      res.clearCookie('token');
+      res.username = '';
+      res.isAdmin = false;
+
+      res.render("profile", {isLogged: false, loginName: res.username})
+    } catch (error) {
+      res.send("error log outing");
+      next(error);
+    }
+
+  }
 };
 
 module.exports = authController;

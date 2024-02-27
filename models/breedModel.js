@@ -5,9 +5,17 @@ const breedSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  name_ru: {
+    type: String,
+    default: "no translation added"
+  },
   descriptions: {
     type: String,
     required: true
+  },
+  descriptions_ru: {
+    type: String,
+    default: "no translation for this"
   },
   imageUrls: {
     type: [String],

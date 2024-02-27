@@ -5,6 +5,11 @@ body {
     display: flex;
     flex-direction: column;
     background-color: rgb(155, 211, 239);
+    text-align: center;
+}
+
+ul {
+    list-style: none;
 }
   
 footer {
@@ -16,6 +21,12 @@ footer {
     position: fixed;
     right: 0;
     bottom: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
 .navbar {
