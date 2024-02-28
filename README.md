@@ -25,6 +25,6 @@ You can log out admin panel from profile section or just by logining as another 
 ## .env
 if .env is not cloned, create file and set to:
 ```
-  MONGO_URI=mongodb+srv://diasimakanov:diasimakanov@cluster0.gvktenm.mongodb.net/WEB?retryWrites=true&w=majority
-  JWT_SECRET=puppy
+MONGO_URI=mongodb+srv://diasimakanov:diasimakanov@cluster0.gvktenm.mongodb.net/WEB?retryWrites=true&w=majority
+JWT_SECRET=puppy
 ```
