@@ -7,7 +7,7 @@ const breedController = {
     fetchAndSaveImages: async () => {
         try {
             // Fetch data from API
-            const response = await axios.get('https://dog.ceo/api/breeds/image/random/10');
+            const response = await axios.get('https://dog.ceo/api/breeds/image/random/3');
             const { message } = response.data;
 
             // Create a new instance of Carousel model
@@ -30,8 +30,9 @@ const breedController = {
             // Fetch images from Carousel collection
             const carousel = await Carousel.findById('65de79621d635cdf58e9f593');
             const breed = await Breed.find();
+            const randomNumber = 0;
             // Render carousel.ejs with images
-            res.render('breeds', { images: carousel.images , breeds: breed});
+            res.render('breeds', { images: carousel.images, breeds: breed});
         } catch (error) {
             console.error('Error rendering carousel:', error);
             res.status(500).send('Internal Server Error');

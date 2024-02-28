@@ -18,7 +18,7 @@
                 </div>
                 <div class="form-group">
                     <label for="name">Breed Name:</label>
-                    <input type="text" id="name" name="name" placeholder="Enter breed name on Russian" required>
+                    <input type="text" id="name" name="ru_name" placeholder="Enter breed name on Russian" required>
                 </div>
                 <div class="form-group">
                     <label for="description">Description:</label>
@@ -26,7 +26,7 @@
                 </div>
                 <div class="form-group">
                     <label for="description">Description:</label>
-                    <textarea id="description" name="description" placeholder="Enter breed description on Russian" required></textarea>
+                    <textarea id="description" name="ru_description" placeholder="Enter breed description on Russian" required></textarea>
                 </div>
                 <div class="form-group">
                     <label for="image">Image URL:</label>
@@ -42,25 +42,61 @@
                 <input type="hidden" name="_method" value="PUT"> <!-- This is a hidden input field to simulate PUT method -->
                 <div class="form-group">
                     <label for="breedName">Breed Name to Edit:</label>
-                    <input type="text" id="breedName" name="name" placeholder="Enter Breed Name for editing" required>
+                    <input type="text" id="breedName" name="edit_name" placeholder="Enter Breed Name for editing" required>
                 </div>
                 <div class="form-group">
                     <label for="breedName">Breed Name on Russian:</label>
-                    <input type="text" id="ru_breedName" name="ru_name" placeholder="Enter Breed Name on Russian" required>
+                    <input type="text" id="ru_breedName" name="edit_ru_name" placeholder="Enter Breed Name on Russian" required>
                 </div>
                 <div class="form-group">
                     <label for="description">Description:</label>
-                    <textarea id="description" name="description" rows="4" required></textarea>
+                    <textarea id="description" name="edit_description" rows="4" required></textarea>
                 </div>
                 <div class="form-group">
                     <label for="description">Description on Russian:</label>
-                    <textarea id="ru_description" name="ru_description" rows="4" required></textarea>
+                    <textarea id="ru_description" name="edit_ru_description" rows="4" required></textarea>
                 </div>
                 <div class="form-group">
                     <label for="imageUrl">Image URL:</label>
-                    <input type="text" id="imageUrl" name="imageUrl" placeholder="Enter Image URL" required>
+                    <input type="text" id="imageUrl" name="new_imageUrl" placeholder="Enter Image URL" required>
                 </div>
                 <button type="submit">Update Breed</button>
+            </form>
+
+        </div>
+        <div class="dash-element">
+            <h1>Add Breed Image</h1>
+            <form action="/adminDashboard/addBreedImage" method="post">
+                <input type="hidden" name="_method" value="PUT">
+                <div class="form-group">
+                    <label for="breedName">Breed Name to Edit:</label>
+                    <input type="text" id="breedName" name="add_image_name" placeholder="Enter Breed Name for editing" required>
+                </div>
+                <div class="form-group">
+                    <label for="imageUrl">Image URL:</label>
+                    <input type="text" id="imageUrl" name="add_imageUrl" placeholder="Enter Image URL" required>
+                </div>
+                <button type="submit">Add Image</button>
+            </form>
+            <h2>Add Breed Image from API</h2>
+            <form action="/adminDashboard/addRandomImage" method="post">
+                <input type="hidden" name="_method" value="PUT">
+                <div class="form-group">
+                    <label for="breedName">Breed Name to add new image:</label>
+                    <input type="text" id="breedName" name="add_random_name" placeholder="Enter Breed Name for adding image" required>
+                </div>
+                <button type="submit">Add Random Image</button>
+            </form>
+
+        </div>
+        <div class="dash-element">
+            <h1>Delete Breed</h1>
+            <form action="/adminDashboard/deleteBreed" method="post">
+                <div class="form-group">
+                    <label for="breedName">Breed Name to Delete:</label>
+                    <input type="text" id="breedName" name="delete_name" placeholder="Enter Breed Name for deleting" required>
+                </div>
+                <button type="submit">Delete</button>
             </form>
 
         </div>

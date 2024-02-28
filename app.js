@@ -26,13 +26,12 @@ app.use(express.json());
 app.use(methodOverride('_method'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
+app.use(expressLayouts);
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/public/style.css', (req, res, next) => {
     res.type('text/css');
     next();
 })
-app.use(expressLayouts);
-
 
 // Connect to MongoDB
 mongoose.connect(process.env.MONGO_URI, {}).then(()=>{

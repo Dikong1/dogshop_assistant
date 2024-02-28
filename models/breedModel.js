@@ -32,6 +32,7 @@ const breedSchema = new mongoose.Schema({
   deletedAt: {
     type: Date,
     default: null
+    // why do we need this???
   }
 });
 
