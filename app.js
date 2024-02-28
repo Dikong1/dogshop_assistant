@@ -13,10 +13,8 @@ const breedRoutes = require('./routes/breedRoutes');
 const localizationMiddleware = require('./middleware/localization');
 const authMiddleware = require('./middleware/authMiddleware');
 
-// Load environment variables from .env file
 dotenv.config();
 
-// Initialize Express app
 const app = express();
 
 app.set('view engine', 'ejs');
@@ -51,6 +49,5 @@ app.use(localizationMiddleware);
 // Error handling middleware
 app.use(errorHandler);
 
-// Start server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

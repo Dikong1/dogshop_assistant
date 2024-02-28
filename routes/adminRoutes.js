@@ -3,7 +3,6 @@ const router = express.Router();
 const adminController = require('../controllers/adminController');
 const authMiddleware = require('../middleware/authMiddleware');
 
-// Example route to get all admin users
 router.get('/', authMiddleware, adminController.getAllAdminFunctionality);
 
 // Creating
@@ -17,6 +16,7 @@ router.post("/addBreedImage", adminController.addBreedImage)
 
 router.post("/addRandomImage", adminController.addRandomImage)
 
+// Deleting
 router.post("/deleteBreed", adminController.deleteBreed)
 
 module.exports = router;

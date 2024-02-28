@@ -5,6 +5,7 @@ const breedController = require('../controllers/breedController');
 // rendering /breed
 router.get('/', breedController.renderCarousel);
 
-router.post('/updateCarousel', breedController.fetchAndSaveImages)
+router.route('/updateCarousel')
+.post(breedController.fetchAndSaveImages)
 
 module.exports = router;

@@ -2,7 +2,6 @@ const User = require('../models/userModel');
 const { hashPassword, comparePasswords } = require('../utils/passwordUtils');
 const { generateToken } = require('../utils/jwtHelper');
 
-// Controller for authentication operations
 const authController = {
   login: async (req, res, next) => {
     try {

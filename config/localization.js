@@ -1,12 +1,9 @@
 // localization.js in config folder(there is another one, my mind is blowing up)
 
-// Default language
 const defaultLanguage = 'en';
 
-// Supported languages
 const supportedLanguages = ['en', 'ru'];
 
-// Function to get the preferred language from request
 const getPreferredLanguage = (req) => {
   // Check if language is specified in query params
   if (req.query.lang && supportedLanguages.includes(req.query.lang)) {

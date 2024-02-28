@@ -1,7 +1,6 @@
 const jwt = require('jsonwebtoken');
 const config = require('../config/config');
 
-// Middleware to check if a JWT token is provided and valid
 const authMiddleware = (req, res, next) => {
   const token = req.cookies.token;
 

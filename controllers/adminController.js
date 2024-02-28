@@ -2,9 +2,7 @@ const axios = require('axios');
 const User = require('../models/userModel');
 const Breed = require('../models/breedModel');
 
-// Controller for admin-related operations
 const adminController = {
-  // Example function to get all admin users
   getAllAdminFunctionality: async (req, res, next) => {
     try {
       if(!req.isAdmin) {

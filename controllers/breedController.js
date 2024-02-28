@@ -15,7 +15,7 @@ const breedController = {
             await carousel.save();
 
             console.log('Images saved to carousel in database');
-            breedController.renderCarousel(req, res)
+            res.redirect('back');
         } catch (error) {
             console.error('Error fetching and saving images:', error);
         }
@@ -26,7 +26,6 @@ const breedController = {
 
             const carousel = await Carousel.findById('65de79621d635cdf58e9f593');
             const breed = await Breed.find();
-            const randomNumber = 0;
             res.render('breeds', { images: carousel.images, breeds: breed});
         } catch (error) {
             console.error('Error rendering carousel:', error);

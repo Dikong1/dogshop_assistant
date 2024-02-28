@@ -3,8 +3,8 @@
 body {
   margin: 0;
   padding: 0;
-  display: flex; /* Set body to flexbox container */
-  flex-direction: column; /* Stack elements vertically */
+  display: flex;
+  flex-direction: column;
   text-align: center;
   font-family: "Comic Sans MS", cursive, sans-serif;
 }
@@ -98,9 +98,9 @@ form input[type="submit"]:hover {
 }
 
 .navbar {
-  background-color: #428bca; /* Blue accent color */
+  background-color: #428bca;
   padding: 10px 20px;
-  color: #fff; /* White text */
+  color: #fff;
 }
 
 .nav-list {
@@ -121,13 +121,13 @@ form input[type="submit"]:hover {
 
 
 .nav-item a {
-  color: #fff; /* White text */
+  color: #fff;
   text-decoration: none;
   font-weight: bold;
 }
 
 .nav-item a:hover {
-  color: #ffd700; /* Yellow hover color */
+  color: #ffd700;
 }
 
 .slider {

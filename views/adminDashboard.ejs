@@ -8,7 +8,6 @@
     <h1>Welcome to the Admin Dashboard!</h1>
     <div class="container">
         
-        <!-- Add any dashboard components or functionality here -->
         <div class="dash-element">
             <h1>Add Dog Breed</h1>
             <form id="addBreedForm" action="/adminDashboard/addBreed" method="post">
@@ -38,8 +37,7 @@
         <div class="dash-element">
             <h1>Edit Breed</h1>
             <form action="/adminDashboard/editBreed" method="post">
-                <!-- Input fields for editing breed information -->
-                <input type="hidden" name="_method" value="PUT"> <!-- This is a hidden input field to simulate PUT method -->
+                <input type="hidden" name="_method" value="PUT">
                 <div class="form-group">
                     <label for="breedName">Breed Name to Edit:</label>
                     <input type="text" id="breedName" name="edit_name" placeholder="Enter Breed Name for editing" required>
