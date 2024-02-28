@@ -19,13 +19,10 @@ const authController = {
       }
 
       const token = generateToken({ user: { name: user.name, isAdmin: user.isAdmin } });
-      // Set the token as a cookie
       res.cookie('token', token);
 
 
-      // Redirect to the home page or dashboard
       res.redirect('/breeds');
-      console.log("login token: " + token)
     } catch (error) {
       res.send("wrong Details");
       next(error);

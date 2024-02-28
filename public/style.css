@@ -6,10 +6,17 @@ body {
   display: flex; /* Set body to flexbox container */
   flex-direction: column; /* Stack elements vertically */
   text-align: center;
+  font-family: "Comic Sans MS", cursive, sans-serif;
 }
   
 ul {
   list-style: none;
+}
+
+p {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 20px;
 }
 
 main {
@@ -24,6 +31,10 @@ footer {
   bottom: 0;
   width: 100%;
   margin-top: 10px;
+}
+
+footer p {
+  color: #181313;
 }
 
 /* Button style */

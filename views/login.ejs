@@ -1,4 +1,11 @@
 <div class="form-container">
+    <p>
+        <% if (fact) {%>
+            New interesting fact about Dogs: <strong><%= fact %></strong>
+        <% } else {%>
+            Interesting fact about dog didn`t uploaded :(
+        <% } %>
+    </p>
     <h2>Login</h2>
     <form action="/login" method="post">
         <div class="form-group">

@@ -1,34 +1,13 @@
-<!-- <% randomImages = images %>
-<% breed =  breeds%>
-<% dogFact = "Dog Facts here" %>
-
-<h1><%= dogFact %></h1>
-<div class="carousel-container">
-  <div class="carousel-viewport">
-    <% images.forEach(function(imageUrl, index) { %>
-      <div class="carousel-item <%= index === 0 ? 'active' : '' %>">
-        <img src="<%= imageUrl %>" alt="Carousel Image <%= index + 1 %>">
-      </div>
-    <% }); %>
-  </div>
-  <div class="carousel-nav">
-    <button class="prev-btn disabled">&lt;</button>
-    <button class="next-btn">&gt;</button>
-  </div>
-</div>
-
-<h1>Admin breeds</h1>
-
-<% breed.forEach(function(breedItem, index) { %>
-  <%- include('./partials/breedCard', {breedItem: breedItem}) %>
-<% }); %> -->
-
 <!-- Carousel -->
 <ul class="slides">
   <% images.forEach(image => { %>
     <div class="slide"><img src="<%= image %>" class="gallery-img" alt="Dog Image"></div>
   <% }); %>
 </ul>
+<form action="/breeds/updateCarousel" method="post">
+  <button type="submit">Update Carousel</button>
+</form>
+
 
 <!-- Breed Information -->
 <div class="breed-info">
