@@ -23,9 +23,9 @@ app.set('view engine', 'ejs');
 
 // Middleware
 app.use(express.json());
+app.use(methodOverride('_method'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
-app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/public/style.css', (req, res, next) => {
     res.type('text/css');

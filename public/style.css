@@ -2,59 +2,174 @@ body {
     margin: 0;
     padding: 0;
     height: 100vh;
-    display: flex;
-    flex-direction: column;
-    background-color: rgb(155, 211, 239);
-    text-align: center;
-}
-
-ul {
-    list-style: none;
-}
+    display: flex; /* Set body to flexbox container */
+    flex-direction: column; /* Stack elements vertically */
+    height: 100vh;
+  }
   
-footer {
-    background-color: #333;
+  ul {
+    list-style: none;
+  }
+  
+  main {
+    flex: 1;
+  }
+
+  footer {
+    background-color: #428bca; /* Blue accent color */
     color: #fff;
     text-align: center;
     padding: 20px;
     width: 100%;
-    position: fixed;
-    right: 0;
+    position: absolute;
     bottom: 0;
-}
-
-.container {
+    width: 100%; /* Ensure footer spans the full width */
+  }
+  
+  .container {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-}
-
-.navbar {
-    background-color: #333;
+  }
+  
+  .navbar {
+    background-color: #428bca; /* Blue accent color */
     padding: 10px 20px;
-}
-
-.nav-list {
+    color: #fff; /* White text */
+  }
+  
+  .nav-list {
     list-style: none;
     padding: 0;
     margin: 0;
-}
-
-.nav-item {
+  }
+  
+  .nav-item {
     display: inline-block;
     margin-right: 20px;
-}
-
-.nav-item:last-child {
+  }
+  
+  .nav-item:last-child {
     margin-right: 0;
-}
-
-.nav-item a {
-    color: #fff;
+  }
+  
+  .nav-item a {
+    color: #fff; /* White text */
     text-decoration: none;
     font-weight: bold;
-}
+  }
+  
+  .nav-item a:hover {
+    color: #ffd700; /* Yellow hover color */
+  }
+  
+  /* Carousel Styles */
+  
+  .carousel-container {
+    width: 700px; /* Adjust width as needed */
+    height: 400px; /* Adjust height as needed */
+    overflow: hidden;
+    margin: 0 auto; /* Center the carousel */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  }
+  
+  .carousel-viewport {
+    width: calc(100% * 9999); /* Force large width for scrolling */
+    height: 100%;
+    display: flex; /* Arrange slides horizontally */
+    position: relative;
+    white-space: nowrap; /* Prevent line breaks */
+    scroll-behavior: smooth; /* Enable smooth scrolling */
+  }
+  
+  .carousel-item {
+    width: calc(700px / 3); /* Adjust width for 3 slides per view */
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+    display: inline-block; /* Allow side-by-side display */
+  }
+  
+  .carousel-item.active {
+    transform: translateX(0);
+  }
+  
+  .carousel-item:not(.active) {
+    transform: translateX(100%);
+  }
+  
+  .carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .carousel-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px; /* Adjust spacing as needed */
+  }
+  
+  .carousel-nav button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #428bca; /* Blue accent color */
+    color: #fff; /* White text */
+  }
+  
+  .carousel-nav button:hover {
+    background-color: #337ab7; /* Darken blue on hover */
+  }
+  
+  /* Initial state: disable previous button */
+  .carousel-nav .prev-btn.disabled {
+    opacity: 0.5;
+    cursor: default;
+  }
+  
 
-.nav-item a:hover {
-    color: #ffd700; /* Change color on hover */
-}
+  .dash-element {
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .dash-element h1 {
+    margin-bottom: 10px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold; /* Added for bolder label text */
+  }
+  
+  .form-group input[type="text"],
+  .form-group textarea {
+    width: 100%; /* Set width for inputs and textareas */
+    padding: 5px;
+    border: 1px solid #ccc; /* Add a border to inputs and textareas */
+    border-radius: 3px; /* Add rounded corners */
+  }
+  
+  .form-group button {
+    background-color: #428bca; /* Blue accent color */
+    color: #fff; /* White text */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px; /* Add margin for spacing */
+  }
+  
+  .form-group button:hover {
+    background-color: #337ab7; /* Darken blue on hover */
+  }

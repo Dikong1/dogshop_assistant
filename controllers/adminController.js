@@ -38,18 +38,16 @@ const adminController = {
   },
   updateBreed: async (req, res, next) => {
     try {
-      if(!req.user) {
+      if(!req.isAdmin) {
         res.redirect('back');
         return;
       }
-      const {name, description, image} = req.body;
-      const breed = Breed.findOneAndUpdate({ name: name }, { descriptions: description, $push: {imageUrls: image}});
+      const {name, ru_name, description, ru_description, image} = req.body;
+      const breed = Breed.findOneAndUpdate({ name: name }, { name_ru: ru_name, descriptions: description, descriptions_ru: ru_description, updatedAt: Date.now, $push: {imageUrls: image}});
       if (!breed) {
         return res.status(404).json({ error: 'Breed not found' });
       }
 
-    // If breed is successfully updated, send 200 OK response with updated breed data
-      res.status(200).json({ message: 'Breed updated successfully', breed });
       res.send("breed updated")
     } catch (error) {
       next(error);

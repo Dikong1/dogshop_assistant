@@ -1,5 +1,14 @@
-<!-- views/partials/carousel.ejs -->
-
-<div class="carousel">
-    <!-- Add carousel content here -->
+<div class="carousel-container">
+    <div class="carousel-viewport">
+      <% images.forEach(function(imageUrl, index) { %>
+        <div class="carousel-item <%= index === 0 ? 'active' : '' %>">
+          <img src="<%= imageUrl %>" alt="Carousel Image <%= index + 1 %>">
+        </div>
+      <% }); %>
+    </div>
+    <div class="carousel-nav">
+      <button class="prev-btn disabled">&lt;</button>
+      <button class="next-btn">&gt;</button>
+    </div>
 </div>
+  

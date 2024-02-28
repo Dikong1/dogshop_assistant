@@ -9,7 +9,6 @@ router.get('/', authMiddleware, adminController.getAllAdminFunctionality);
 router.route("/addBreed")
 .post(adminController.createBreed)
 
-router.route("/editBreed")
-.put(adminController.updateBreed)
+router.post("/editBreed", adminController.updateBreed)
 
 module.exports = router;

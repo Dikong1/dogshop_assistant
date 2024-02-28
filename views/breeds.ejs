@@ -1,8 +1,10 @@
-<!-- views/pages/breeds.ejs -->
+<% randomImages = images %>
+<% breed =  breeds%>
 
 <h1>All Breeds</h1>
-<ul>
-  <% breeds.forEach(breed => { %>
-    <li><%= breed.name %></li> <!-- Assuming 'name' is the property for the breed name -->
-  <% }); %>
-</ul>
+<%- include('./partials/carousel') %>
+<h1>Admin breeds</h1>
+
+<% breed.forEach(function(breedItem, index) { %>
+  <%- include('./partials/breedCard', {breedItem: breedItem}) %>
+<% }); %>
