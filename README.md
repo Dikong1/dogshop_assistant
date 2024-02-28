@@ -1,6 +1,6 @@
 # Dogshop Assistant App
 Dogshop Assistant App is a web application that helps people choose puppies or adult dogs from zoo-shops or kennels. We share mood of creativity and kindness. If you are active user of our site, you will probably notice it.
-Also if somehow your grand-grand-grandpa is nazi and have a hard time accepting non-german breeds, then it may become impossible to care any pet but german shepherd. In that case, site allows to filter pets by your needs.
+Also if somehow your grand-grand-grandpa have a hard time accepting non-german breeds, then it may become impossible to care any pet but german shepherd. In that case, site allows to filter pets by your needs.
 
 ## Technologies and Architectures Used
 - Node.js
