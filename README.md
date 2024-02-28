@@ -16,11 +16,14 @@ Also if somehow your grand-grand-grandpa have a hard time accepting non-german b
 Also you can visit deployed application on https://odd-gold-cougar-robe.cyclic.app/login 
 By the way, site maybe marked as dangerous or not safe, ingore it and just continue browsing by pressing continue to unsafe site from more information dropdown)
 
-
 ## Admin Panel:
 To enter admin panel in login field set: Name - Dias, Password - 123
 When you loggen in as admin, from any part of application admin panel is accessible by clicking adminDashboard. If you are not logged in as admin, then you will be redirected back.
 You can log out admin panel from profile section or just by logining as another user.
+
+## External API`s used
+- Dog API (https://dogapi.dog/) for updating facts about dogs and getting breed description
+- DOG API (https://dog.ceo/dog-api/) for getting images for carousel and realising "add image from API" in breed editing menu
 
 ## .env
 if .env is not cloned, create file and set to:
