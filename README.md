@@ -25,6 +25,10 @@ You can log out admin panel from profile section or just by logining as another 
 - Dog API (https://dogapi.dog/) for updating facts about dogs and getting breed description
 - DOG API (https://dog.ceo/dog-api/) for getting images for carousel and realising "add image from API" in breed editing menu
 
+## About Quiz and social sharing
+Complete quiz on quiz section from navigation panel and share your score
+You can share your quiz results on Facebook, Twitter and LinkedIn. On Twitter sharing even scores result is being shared for you, which is unavailable on other socials. And also facebook and linkedin, does not support localhost sharing unvalid network links such localhost. That is why github link being shared as base url
+
 ## .env
 if .env is not cloned, create file and set to:
 ```
