@@ -49,6 +49,10 @@ router.route('/signup')
 router.route('/profile')
 .get(authMiddleware, authController.getProfile)
 
+router.route('/quiz')
+.get(authMiddleware, authController.getQuiz)
+.post(authController.submitQuiz)
+
 
 router.post("/quit", authController.logout)
 

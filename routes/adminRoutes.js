@@ -14,6 +14,10 @@ router.post("/editBreed", adminController.updateBreed)
 
 router.post("/addBreedImage", adminController.addBreedImage)
 
+
+// deleeeeeeeeeeeeeeeeeeeeeeeeeeeeeeteeeeeeeeeeee this
+router.post("/addQuestion", adminController.addQuizQuestion)
+
 router.post("/addRandomImage", adminController.addRandomImage)
 
 // Deleting

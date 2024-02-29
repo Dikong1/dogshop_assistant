@@ -1,0 +1,74 @@
+<% if (isLogged) { %>
+    <h1>Welcome, <%= loginName %>! Please, pass the quiz within the given time!</h1>
+    <div class="quiz-score">
+        <% if (quizScore !== undefined) { %>
+            <h2>Your quiz score: <%= quizScore %>%</h2>
+            <p>Share results on social networks:</p>
+            <!-- Social sharing buttons -->
+            <div class="social-share-buttons">
+                <!-- Facebook share button -->
+                <a href="<%= facebookShareUrl %>" target="_blank">
+                    <img src="/images/facebook.png" alt="Share on Facebook">
+                </a>
+                <!-- Twitter share button -->
+                <a href="<%= twitterShareUrl %>" target="_blank">
+                    <img src="/images/twitter.png" alt="Share on Twitter">
+                </a>
+                <!-- LinkedIn share button -->
+                <a href="<%= linkedinShareUrl %>" target="_blank">
+                    <img src="/images/linkedin.png" alt="Share on LinkedIn">
+                </a>
+            </div>
+
+
+        <% } %>
+    </div>
+    
+    <div id="quiz">
+        <form class="options-form" id="quizForm" action="/quiz" method="post">
+            <% quizQuestions.forEach((question, index) => { %>
+                <div class="question">
+                    <p><%= index + 1 %>. <%= question.question %></p>
+                    <% question.options.forEach((option, optionIndex) => { %>
+                        <input type="radio" id="option<%= index %><%= optionIndex %>" name="answer<%= index %>" value="<%= option %>" required>
+                        <label for="option<%= index %><%= optionIndex %>"><%= option %></label><br>
+                    <% }) %>
+                </div>
+            <% }) %>
+            <button id="submitQuiz" type="submit">Submit Quiz</button>
+        </form>
+        <div id="timer"></div>
+        
+    </div>
+<% } else { %>
+    <h1>Please, <a href="/login">Login Now</a> to pass the quiz</h1>
+<% } %>
+
+<script>
+    let countdown = 120;
+
+    const timerDisplay = document.getElementById('timer');
+
+    function displayTime() {
+        const minutesLeft = Math.floor(countdown / 60);
+        let secondsLeft = countdown % 60;
+        if (secondsLeft < 10) {
+            secondsLeft = `0${secondsLeft}`;
+        }
+        timerDisplay.textContent = `Time Left: ${minutesLeft}:${secondsLeft}`;
+    }
+
+    function countdownTimer() {
+        displayTime();
+        const timer = setInterval(() => {
+            countdown--;
+            displayTime();
+            if (countdown <= 0) {
+                clearInterval(timer);
+                document.getElementById('quizForm').submit();
+            }
+        }, 1000);
+    }
+
+    countdownTimer();
+</script>

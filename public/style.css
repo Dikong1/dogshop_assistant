@@ -244,4 +244,21 @@ slider img {
   margin-right: 8px;
 }
 
+.quiz-score {
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
+  margin-bottom: 20px;
+  padding: 20px;
+}
 
+.social-share-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.social-share-buttons img {
+  width: 30px;
+  height: 30px;
+}

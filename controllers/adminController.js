@@ -1,6 +1,7 @@
 const axios = require('axios');
 const User = require('../models/userModel');
 const Breed = require('../models/breedModel');
+const Quiz = require('../models/quizModel')
 
 const adminController = {
   getAllAdminFunctionality: async (req, res, next) => {
@@ -131,6 +132,21 @@ const adminController = {
       next(error);
     }
   },
+  addQuizQuestion: async (req, res) => {
+    try {
+      const { question, options, correctAnswer } = req.body;
+      const data = {
+        question: question,
+        options: options.split(','),
+        correctOption: correctAnswer
+      }
+      await Quiz.insertMany(data);
+      res.send('quiz added');
+    } catch (error) {
+      console.error('Error adding quiz question:', error);
+      res.status(500).send('Internal Server Error');
+    }
+  }
 };
 
 module.exports = adminController;
